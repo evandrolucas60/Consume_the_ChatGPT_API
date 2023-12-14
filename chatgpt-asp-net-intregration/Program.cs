@@ -9,11 +9,13 @@ builder.AddChatGpt(/*builder.Configuration*/);
 
 builder.Services.AddControllers();
 
+builder.Services.AddRouting(options => options.LowercaseUrls = true);
+
 builder.Services.AddSwagger(builder.Configuration, "ChatGpt ASP.NET 8 Integration");
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+//builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
